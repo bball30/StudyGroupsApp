@@ -97,6 +97,7 @@ public class StudyGroupRepoImpl implements StudyGroupRepo {
             if (studyGroup.getCreationDate() == null)
                 studyGroup.setCreationDate(java.time.LocalDate.now());
 
+            System.out.println("AAA " + studyGroup.toString());
             entityManager.persist(studyGroup);
 
             StudyGroupEntity result = entityManager.merge(studyGroup);

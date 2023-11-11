@@ -87,6 +87,7 @@ public class StudyGroupsController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response createStudyGroup(@NotNull(message = "Study group must not be null") @Valid StudyGroupBase studyGroup) {
+        System.out.println(studyGroup.toString());
         Optional<StudyGroupEntity> maybeCreatedStudyGroup = studyGroupService.create(studyGroup);
         if (maybeCreatedStudyGroup.isEmpty()) {
             return Response.status(Response.Status.BAD_REQUEST).build();

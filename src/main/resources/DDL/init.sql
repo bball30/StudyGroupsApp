@@ -3,7 +3,7 @@ CREATE TABLE Coordinates (
     y float4 not null
 );
 
-CREATE TABLE LOCATION (
+CREATE TABLE LOCATIONS (
     x float8 null,
     y bigint not null,
     z float8 not null
@@ -33,10 +33,10 @@ CREATE TABLE PERSON (
     name varchar(64) not null check ( name != '' ),
     passportID varchar(64) not null check ( length(name) >= 7),
     nationality COUNTRY null,
-    location LOCATION not null
+    location_id LOCATIONS not null
 );
 
-CREATE TABLE StudyGroup (
+CREATE TABLE study_groups (
     id serial primary key,
     name varchar not null check ( name != '' ),
     coordinates Coordinates not null,
